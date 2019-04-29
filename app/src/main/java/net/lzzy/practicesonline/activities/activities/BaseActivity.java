@@ -17,22 +17,26 @@ import net.lzzy.practicesonline.activities.utlis.AppUtils;
  * Description:
  */
 public abstract class BaseActivity extends AppCompatActivity {
+    private Fragment fragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayout());
-
         AppUtils.addActivity(this);
         FragmentManager manager = getSupportFragmentManager();
-        Fragment fragment = manager.findFragmentById(getContainerId());
+        fragment = manager.findFragmentById(getContainerId());
         if (fragment == null){
             fragment = createFragment();
             manager.beginTransaction().add(getContainerId(),fragment).commit();
         }
 
     }
+    protected Fragment getFragment(){
+        return fragment;
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
