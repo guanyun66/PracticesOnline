@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.activities.QuestionActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activity_question_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/activity_question_tv_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="点击查看解析"
+                android:textColor="#231231"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/activity_question_dots"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/dot_style"/>
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/dot_fill_style"/>
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/dot_style"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/activity_question_tv_view"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_sector_green"
+                android:gravity="end|bottom"
+                android:paddingEnd="15dp"
+                android:paddingBottom="15dp"
+                android:text="看"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/activity_question_tv_commit"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_sector_red"
+                android:gravity="end|bottom"
+                android:paddingEnd="15dp"
+                android:paddingBottom="15dp"
+                android:text="交"
+                android:textSize="16sp" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

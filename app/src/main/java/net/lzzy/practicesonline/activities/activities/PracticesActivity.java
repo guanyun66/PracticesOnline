@@ -32,6 +32,7 @@ public class PracticesActivity extends BaseActivity implements PracticesFragment
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppUtils.addActivity(this);
         initView();
         if (getIntent() != null){
             refresh = getIntent().getBooleanExtra(DetectWebService.EXTRA_REFRESH,false);
@@ -114,6 +115,7 @@ public class PracticesActivity extends BaseActivity implements PracticesFragment
     public void onPracticesSelected(String practiceId, int apiId) {
         Intent intent = new Intent(this,QuestionActivity.class );
         intent.putExtra(API_ID,apiId);
+        intent.putExtra(PRACTICE_ID,practiceId);
         startActivity(intent);
     }
 }

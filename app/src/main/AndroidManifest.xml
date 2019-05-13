@@ -16,8 +16,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activities.activities.QuestionActivity"/>
         <service android:name=".activities.network.DetectWebService"/>
-        <activity android:name=".activities.activities.PracticesActivity"/>
-        <activity android:name=".activities.activities.SplashActivity">
+        <activity android:name=".activities.activities.ResultActivity"/>
+        <activity android:name=".activities.activities.SplashActivity"/>
+        <activity android:name=".activities.activities.PracticesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

@@ -19,7 +19,7 @@ import java.util.UUID;
  */
 public class Question extends BaseEntity implements Sqlitable, Jsonable {
     @Ignored
-    public static final String COL_PRACTICE_ID="questionId";
+    public static final String COL_PRACTICE_ID="practiceId";
     private String content;
     @Ignored
     private QuestionType type;

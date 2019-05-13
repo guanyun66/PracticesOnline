@@ -61,10 +61,10 @@ public class QuestionFactory {
         }
 
         public void insert(Question question){
-            String q=repository.getDeleteString(question);
+            String q=repository.getInsertString(question);
             List<String> sqlAction=new ArrayList<>();
             for (Option option:question.getOptions()){
-                sqlAction.add(optionRepository.getDeleteString(option));
+                sqlAction.add(optionRepository.getInsertString(option));
             }
             sqlAction.add(q);
             repository.exeSqls(sqlAction);

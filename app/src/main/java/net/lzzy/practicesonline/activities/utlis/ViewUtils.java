@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.widget.SearchView;
 
 import net.lzzy.practicesonline.R;
+import net.lzzy.practicesonline.activities.activities.QuestionActivity;
 import net.lzzy.practicesonline.activities.activities.SplashActivity;
 
 /**
@@ -67,6 +68,15 @@ public class ViewUtils {
             ((SplashActivity) context).gotoMain();
         }
     }
+    public static int dp2px(int dpValue,Context context) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+    public static int px2dp(int pxValue,Context context) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue / scale + 0.5f);
+    }
+
     public abstract static class AbstractTouchListener implements View.OnTouchListener{
         @SuppressWarnings("ClickableViewAccessiblility")
         @Override
@@ -87,8 +97,6 @@ public class ViewUtils {
             handleQuery(newText);
             return true;
         }
-
-
 
         public abstract void handleQuery(String kw);
     }
