@@ -18,6 +18,7 @@ import net.lzzy.practicesonline.activities.utlis.AppUtils;
  */
 public abstract class BaseActivity extends AppCompatActivity {
     private Fragment fragment;
+    private FragmentManager manager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayout());
         AppUtils.addActivity(this);
-        FragmentManager manager = getSupportFragmentManager();
+        manager = getSupportFragmentManager();
         fragment = manager.findFragmentById(getContainerId());
         if (fragment == null){
             fragment = createFragment();
@@ -37,6 +38,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         return fragment;
     }
 
+    protected FragmentManager getManager(){
+        return manager;
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

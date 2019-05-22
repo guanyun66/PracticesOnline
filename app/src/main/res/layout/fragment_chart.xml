@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/fragment_char_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/fragment_char_pie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/fragment_char_line"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/fragment_char_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/fragment_chart_dot1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/dot_style" />
+
+            <TextView
+                android:id="@+id/fragment_chart_dot2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/dot_style" />
+
+            <TextView
+                android:id="@+id/fragment_chart_dot3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/dot_style" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fragment_chart_tv_chart"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:text="表"
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
+</FrameLayout>
